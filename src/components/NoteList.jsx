@@ -17,11 +17,6 @@ export default class NoteList extends Component {
         />
       );
     });
-    return (
-      <div>
-        <p>as</p>
-        {allNotes}
-      </div>
-    );
+    return <div className="note-list">{allNotes}</div>;
   }
 }

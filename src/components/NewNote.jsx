@@ -24,7 +24,7 @@ export default class NewNote extends Component {
     const { noteBody, noteColor } = state;
 
     return (
-      <div className="Add">
+      <div className="new-note">
         <div className="text">
           <label>Note Text</label>
           <input
@@ -51,7 +51,7 @@ export default class NewNote extends Component {
           </select>
         </div>
 
-        <div className="add">
+        <div className="add-button">
           <button onClick={handleAddNewNote}>ADD NOTE</button>
         </div>
       </div>

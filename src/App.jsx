@@ -12,16 +12,40 @@ export default class App extends Component {
     this.state = {
       notes: [
         {
-          id: '2f0a8ba9-dcf8-4b9b-8f19-59974cdd4626',
+          id: '25eae0d4-6bba-4d26-9b8f-a7bc7880f90d',
           body: '1',
           color: 'Blue',
+          date: 'March 29, 6:22 AM '
+        },
+        {
+          id: '2f0a8ba9-dcf8-4b9b-8f19-59974cdd4626',
+          body: '2',
+          color: 'Purple',
           date: 'March 29, 4:43 PM '
         },
         {
           id: '427a1898-f1c0-4347-8749-1bc361164fdc',
-          body: '2',
-          color: 'Red',
+          body: '3',
+          color: 'Green',
           date: 'March 29, 4:43 AM '
+        },
+        {
+          id: 'cfc4e101-7d0b-43b7-89c6-93eafe700896',
+          body: '4',
+          color: 'Red',
+          date: 'March 29, 6:22 AM '
+        },
+        {
+          id: '470dc6cb-bce8-4a90-8edb-c4b1a7a9b6b2',
+          body: '5',
+          color: 'Blue',
+          date: 'March 29, 6:22 AM '
+        },
+        {
+          id: '640f5542-76da-4b51-9c15-71aadf941137',
+          body: '6',
+          color: 'Orange',
+          date: 'March 29, 6:22 AM '
         }
       ]
     };
@@ -82,7 +106,7 @@ export default class App extends Component {
     const { notes } = state;
 
     return (
-      <div className="App">
+      <div className="app">
         <NewNote addNewNote={addNewNote} />
         <NoteList notes={notes} editNote={editNote} deleteNote={deleteNote} />
       </div>

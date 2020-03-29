@@ -1,0 +1,176 @@
+$color-blue-primary: #007bff;
+$color-red-danger: #dc3545;
+$color-green-success: #28a745;
+$color-yellow-warning: #ffc107;
+$color-light_blue-info: #17a2b8;
+$color-white-light: #f8f9fa;
+$color-gray-secondary: #6c757d;
+$color-black-dark: #343a40;
+$color-orange: #ff9800;
+$color-purble: #9036a0;
+$color-blue-button: #2eb2f6;
+$color-white: #fff;
+$color-gray: #888;
+
+$color-label-font: #a0a0a0;
+$color-input-border: #d5d5d5;
+$color-input-bg: #f8f8f8;
+$color-input-shadow: #c3c3c3;
+
+$color-add: #46d2fa;
+
+$color-icon: #aeaeae;
+$font-primary: sans-serif;
+$color-noteBody: #808080;
+
+// normalization
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-gray;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+// App Component
+.app {
+  width: 80%;
+  margin: 2% auto;
+}
+
+// New Note Component
+.new-note {
+  width: 45%;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  .text,
+  .color {
+    label {
+      color: $color-label-font;
+    }
+    input,
+    select {
+      border: $color-input-border 0.1rem solid;
+      border-radius: 0.25rem;
+      background-color: $color-input-bg;
+      box-shadow: 0.1rem 0.15rem 0.3rem $color-input-shadow;
+      padding: 1rem;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .add-button {
+    display: grid;
+    justify-content: center;
+    margin: 1rem;
+    button {
+      background-image: linear-gradient(to bottom, #48d4fa, #33aced);
+      color: $color-white;
+      border: none;
+      border-radius: 0.25rem;
+      box-shadow: 0.1rem 0.15rem 0.5rem $color-input-shadow;
+      padding: 1rem 2rem;
+      text-shadow: 0.1rem 0.1rem #217da5;
+    }
+  }
+}
+
+// Note List Component
+.note-list {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  grid-column: auto auto auto;
+  grid-template-columns: repeat(3, 32%);
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  width: 95%;
+  margin: 0 auto;
+
+  i.fas,
+  i.fab {
+    color: $color-icon;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 0.25rem;
+  }
+
+  // Note Item Component
+  .note-item {
+    border-radius: 0.25rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem $color-input-shadow;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #f7f7f7, #ededed);
+
+    background-color: #f3f3f3;
+    .header {
+      font-size: 1.5rem;
+      padding: 1rem 1.5rem;
+      font-weight: bold;
+      span {
+        float: left;
+      }
+      .buttons {
+        button {
+          border: $color-input-border solid 0.1rem;
+          border-radius: 0.25rem;
+          &:not(:last-child) {
+            margin-right: 0.5rem;
+          }
+          i {
+            background-image: linear-gradient(to bottom, #ffffff, #e8e8e8);
+            padding: 0.5rem 0.5rem;
+            border: none;
+          }
+        }
+        float: right;
+      }
+    }
+    .body {
+      clear: both;
+      min-height: 8rem;
+      max-height: 8rem;
+      font-size: 1.2rem;
+      overflow: auto;
+      padding: 1rem 1.5rem;
+      p {
+        color: $color-noteBody;
+        text-shadow: 0.05rem 0.05rem $color-white;
+      }
+    }
+    hr {
+      color: #d8d8d8;
+      margin: 0;
+      height: 1px;
+      background-color: #d8d8d8;
+      border: none;
+    }
+    .time {
+      padding: 0.5rem 1.5rem;
+      font-size: 1rem;
+      p {
+        color: $color-noteBody;
+        text-shadow: 0.05rem 0.05rem $color-white;
+      }
+    }
+  }
+}
