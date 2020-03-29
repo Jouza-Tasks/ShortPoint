@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a4f31ee45b0b243f657088e3df07bf1b",
+    "revision": "d2a0ded57580b3655b6571debe8965d8",
     "url": "/ShortPoint/index.html"
   },
   {
-    "revision": "14ab8e088cff93f6d62b",
-    "url": "/ShortPoint/static/css/main.3a829338.chunk.css"
+    "revision": "aa2f98f21388175d7c86",
+    "url": "/ShortPoint/static/css/main.8752ef46.chunk.css"
   },
   {
     "revision": "5008dc51417bd79f997d",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ShortPoint/static/js/2.fa8d609a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "14ab8e088cff93f6d62b",
-    "url": "/ShortPoint/static/js/main.b5cad950.chunk.js"
+    "revision": "aa2f98f21388175d7c86",
+    "url": "/ShortPoint/static/js/main.65dc3105.chunk.js"
   },
   {
     "revision": "cfbce348b4fc205d73b6",
