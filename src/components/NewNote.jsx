@@ -9,7 +9,7 @@ export default class NewNote extends Component {
     };
   }
 
-  handleChange = e => {
+  handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -20,7 +20,7 @@ export default class NewNote extends Component {
   };
 
   render() {
-    const { state, handleChange, handleAddNewNote } = this;
+    const { state, handleInputChange, handleAddNewNote } = this;
     const { noteBody, noteColor } = state;
 
     return (
@@ -31,14 +31,18 @@ export default class NewNote extends Component {
             type="text"
             name="noteBody"
             value={noteBody}
-            onChange={handleChange}
+            onChange={handleInputChange}
             placeholder="Body for New Note..."
           />
         </div>
 
         <div className="color">
           <label>Note Color</label>
-          <select name="noteColor" onChange={handleChange} value={noteColor}>
+          <select
+            name="noteColor"
+            onChange={handleInputChange}
+            value={noteColor}
+          >
             <option value="Blue">Blue</option>
             <option value="Purble">Purble</option>
             <option value="Green">Green</option>
