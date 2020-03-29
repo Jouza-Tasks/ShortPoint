@@ -92,7 +92,7 @@ export default class App extends Component {
     newNotes[index] = {
       ...newNotes[index],
       body: newBody,
-      time: this.getCurrentDate()
+      date: this.getCurrentDate()
     };
     this.setState({
       notes: newNotes
