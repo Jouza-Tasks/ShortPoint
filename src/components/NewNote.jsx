@@ -1,52 +1,55 @@
 import React, { Component } from 'react';
-import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem
-} from 'reactstrap';
 
 export default class NewNote extends Component {
   constructor(props) {
     super(props);
     this.state = {
       noteBody: '',
-      noteColor: '',
-      isDropdownOpen: false
+      noteColor: 'Blue'
     };
   }
-  toggleDropDown = () => {
-    this.setState({ isDropdownOpen: !this.state.isDropdownOpen });
+
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  onChangeInput = e => {
-    this.setState({ noteBody: e.target.value });
+  handleAddNewNote = () => {
+    const { noteBody, noteColor } = this.state;
+    this.props.addNewNote(noteBody, noteColor);
+    this.setState({ noteBody: '' });
   };
 
   render() {
-    const { state, props, onChangeInput, toggleDropDown } = this;
-    const { noteBody, noteColor, isDropdownOpen } = state;
-    const { addNewNote } = props;
+    const { state, handleChange, handleAddNewNote } = this;
+    const { noteBody, noteColor } = state;
 
     return (
-      <div>
-        test
-        <input type="text" onChange={onChangeInput} value={noteBody} />
-      
-        <Dropdown isOpen={isDropdownOpen} toggle={toggleDropDown}>
-          <DropdownToggle caret>Dropdown</DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Header</DropdownItem>
-            <DropdownItem>Some Action</DropdownItem>
-            <DropdownItem disabled>Action (disabled)</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>Foo Action</DropdownItem>
-            <DropdownItem>Bar Action</DropdownItem>
-            <DropdownItem>Quo Action</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
+      <div className="Add">
+        <div className="text">
+          <label>Note Text</label>
+          <input
+            type="text"
+            name="noteBody"
+            value={noteBody}
+            onChange={handleChange}
+            placeholder="Body for New Note..."
+          />
+        </div>
 
-        <button onClick={() => addNewNote(noteBody, noteColor)}> Add Note</button>
+        <div className="color">
+          <label>Note Color</label>
+          <select name="noteColor" onChange={handleChange} value={noteColor}>
+            <option value="Blue">Blue</option>
+            <option value="Purble">Purble</option>
+            <option value="Green">Green</option>
+            <option value="Red">Red</option>
+            <option value="Orange">Orange</option>
+          </select>
+        </div>
+
+        <div className="add">
+          <button onClick={handleAddNewNote}>ADD NOTE</button>
+        </div>
       </div>
     );
   }
