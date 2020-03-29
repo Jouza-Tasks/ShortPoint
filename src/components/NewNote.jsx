@@ -5,7 +5,7 @@ export default class NewNote extends Component {
     super(props);
     this.state = {
       noteBody: '',
-      noteColor: 'Blue'
+      noteColor: 'Light_Blue'
     };
   }
 
@@ -16,7 +16,7 @@ export default class NewNote extends Component {
   handleAddNewNote = () => {
     const { noteBody, noteColor } = this.state;
     this.props.addNewNote(noteBody, noteColor);
-    this.setState({ noteBody: '' });
+    this.setState({ noteBody: '', noteColor: 'Light_Blue' });
   };
 
   render() {
@@ -43,10 +43,11 @@ export default class NewNote extends Component {
             onChange={handleInputChange}
             value={noteColor}
           >
-            <option value="Blue">Blue</option>
-            <option value="Purble">Purble</option>
+            <option value="Light_Blue">Light_Blue</option>
+            <option value="Purple">Purple</option>
             <option value="Green">Green</option>
             <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
             <option value="Orange">Orange</option>
           </select>
         </div>

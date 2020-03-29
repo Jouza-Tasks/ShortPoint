@@ -37,20 +37,19 @@ export default class NoteItem extends Component {
     const { body, date, color } = note;
 
     const colors = {
-      Blue: '#007bff',
+      Light_Blue: '#38d4d0',
+      Purple: '#9c27b0',
       Green: '#28a745',
       Red: '#dc3545',
-      Purple: '#9c27b0',
-      Orange: '#ff9800',
-      Gray: '#6c757d',
-      Black: '#343a40'
+      Blue: '#007bff',
+      Orange: '#ff9800'
     };
     return (
       <div
         className="note-item"
         style={{ borderLeft: `5px ${colors[color]} solid` }}
       >
-        <div className="header">
+        <div className="note-header">
           <span style={{ color: colors[color] }}>Note {index + 1}</span>
           <div className="buttons">
             {isEdit && (
@@ -88,12 +87,12 @@ export default class NoteItem extends Component {
           </div>
         </div>
 
-        <div className="body">
+        <div className="note-body">
           {isEdit ? (
             <>
               <textarea
                 rows="3"
-                cols="35"
+                cols="30"
                 name="newBody"
                 defaultValue={newBody}
                 onChange={handleInputChange}

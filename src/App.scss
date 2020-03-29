@@ -1,17 +1,3 @@
-$color-blue-primary: #007bff;
-$color-red-danger: #dc3545;
-$color-green-success: #28a745;
-$color-yellow-warning: #ffc107;
-$color-light_blue-info: #17a2b8;
-$color-white-light: #f8f9fa;
-$color-gray-secondary: #6c757d;
-$color-black-dark: #343a40;
-$color-orange: #ff9800;
-$color-purble: #9036a0;
-$color-blue-button: #2eb2f6;
-$color-white: #fff;
-$color-gray: #888;
-
 $color-label-font: #a0a0a0;
 $color-input-border: #d5d5d5;
 $color-input-bg: #f8f8f8;
@@ -22,6 +8,9 @@ $color-add: #46d2fa;
 $color-icon: #aeaeae;
 $font-primary: sans-serif;
 $color-noteBody: #808080;
+
+$color-white: #fff;
+$color-gray: #888;
 
 // normalization
 *,
@@ -69,6 +58,7 @@ body {
       padding: 1rem;
       width: 100%;
       margin-bottom: 1rem;
+      caret-color: $color-add;
     }
   }
 
@@ -84,6 +74,9 @@ body {
       box-shadow: 0.1rem 0.15rem 0.5rem $color-input-shadow;
       padding: 1rem 2rem;
       text-shadow: 0.1rem 0.1rem #217da5;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -106,12 +99,13 @@ body {
   }
 
   ::-webkit-scrollbar {
-    width: 0.25rem;
+    width: 0.75rem;
+    height: 0.75rem;
   }
 
   ::-webkit-scrollbar-thumb {
     background: #cfcfcf;
-    border-radius: 0.25rem;
+    border-radius: 0.75rem;
   }
 
   // Note Item Component
@@ -122,7 +116,7 @@ body {
     background-image: linear-gradient(to bottom, #f7f7f7, #ededed);
 
     background-color: #f3f3f3;
-    .header {
+    .note-header {
       font-size: 1.5rem;
       padding: 1rem 1.5rem;
       font-weight: bold;
@@ -136,6 +130,9 @@ body {
           &:not(:last-child) {
             margin-right: 0.5rem;
           }
+          &:hover {
+            cursor: pointer;
+          }
           i {
             background-image: linear-gradient(to bottom, #ffffff, #e8e8e8);
             padding: 0.5rem 0.5rem;
@@ -145,7 +142,7 @@ body {
         float: right;
       }
     }
-    .body {
+    .note-body {
       clear: both;
       min-height: 8rem;
       max-height: 8rem;
