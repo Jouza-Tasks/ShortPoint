@@ -10,8 +10,8 @@ export default class NewNote extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      color: '',
+      noteBody: '',
+      noteColor: '',
       isDropdownOpen: false
     };
   }
@@ -20,18 +20,19 @@ export default class NewNote extends Component {
   };
 
   onChangeInput = e => {
-    this.setState({ title: e.target.value });
+    this.setState({ noteBody: e.target.value });
   };
 
   render() {
     const { state, props, onChangeInput, toggleDropDown } = this;
-    const { title, color, isDropdownOpen } = state;
+    const { noteBody, noteColor, isDropdownOpen } = state;
     const { addNewNote } = props;
 
     return (
       <div>
         test
-        <input type="text" onChange={onChangeInput} value={title} />
+        <input type="text" onChange={onChangeInput} value={noteBody} />
+      
         <Dropdown isOpen={isDropdownOpen} toggle={toggleDropDown}>
           <DropdownToggle caret>Dropdown</DropdownToggle>
           <DropdownMenu>
@@ -44,7 +45,8 @@ export default class NewNote extends Component {
             <DropdownItem>Quo Action</DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <button onClick={() => addNewNote(title, color)}> Add Note</button>
+
+        <button onClick={() => addNewNote(noteBody, noteColor)}> Add Note</button>
       </div>
     );
   }

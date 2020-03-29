@@ -9,25 +9,18 @@ export default class App extends Component {
     super();
     this.state = {
       notes: [
-        { id: uuidv4(), color: 'red', text: '1' },
-        { id: uuidv4(), color: 'blue', text: '2' },
-        { id: uuidv4(), color: 'red', text: '3' },
-        { id: uuidv4(), color: 'green', text: '4' },
-        { id: uuidv4(), color: 'red', text: '5' },
-        { id: uuidv4(), color: 'yellow', text: '6' },
-        { id: uuidv4(), color: 'red', text: '7' }
+        { id: uuidv4(), color: 'red', body: '1' },
+        { id: uuidv4(), color: 'blue', body: '2' },
+        { id: uuidv4(), color: 'green', body: '3' },
+        { id: uuidv4(), color: 'yellow', body: '4' }
       ]
     };
   }
 
-  addNewNote = (title, color) => {
+  addNewNote = (body, color) => {
     // need date
-    let newNote = { id: uuidv4(), title, color };
+    let newNote = { id: uuidv4(), body, color };
     this.setState({ notes: [...this.state.notes, newNote] });
-  };
-
-  sortNotes = () => {
-    // asc or desc (later)
   };
 
   render() {
