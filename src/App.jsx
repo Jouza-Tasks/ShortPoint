@@ -82,8 +82,7 @@ export default class App extends Component {
 
   addNewNote = (body, color) => {
     // need date
-    let currentDate = this.getCurrentDate();
-    let newNote = { id: uuidv4(), body, color, date: currentDate };
+    let newNote = { id: uuidv4(), body, color, date: this.getCurrentDate() };
     this.setState({ notes: [...this.state.notes, newNote] });
   };
 
