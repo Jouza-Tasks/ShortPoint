@@ -10,7 +10,7 @@ export default class NoteItem extends Component {
       <div>
         <p>{title}</p>
         <p>{body}</p>
-        {/* <p>{date}</p> */}
+        <p>{date}</p>
         <p>{color}</p>
 
       </div>
