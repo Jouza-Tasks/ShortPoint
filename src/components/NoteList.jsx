@@ -6,12 +6,12 @@ export default class NoteList extends Component {
     const { props } = this;
     const { notes, editNote, deleteNote } = props;
 
-    const allNotes = notes.map((note, i) => {
+    const allNotes = notes.slice(0).reverse().map((note, i) => {
       return (
         <NoteItem
           key={note.id}
           note={note}
-          index={i}
+          index={notes.length-i-1}
           editNote={editNote}
           deleteNote={deleteNote}
         />
